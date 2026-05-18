@@ -315,6 +315,7 @@ const VENUES = [
   { id:"reffen",        name:"Padel Yard Reffen",       address:"Refshaleøen",  worker:"https://reffen.carsten-houborg.workers.dev",          color:"#a78bfa" },
   { id:"jernbanebyen",  name:"Padel Yard Jernbanebyen", address:"København SV", worker:"https://jernbanebyen.carsten-houborg.workers.dev",    color:"#f472b6" },
   { id:"kloevermarken", name:"Match Padel Kløvermarken",address:"København S",  worker:"https://kloevermarken.carsten-houborg.workers.dev",   color:"#fb923c" },
+  { id:"taastrup",      name:"Racket Club Taastrup",    address:"Taastrup",     worker:"https://taastrup.carsten-houborg.workers.dev",         color:"#e879f9" },
 ];
 const PREFERRED_MIN = 90;
 // ─────────────────────────────────────────────────────────────
@@ -579,7 +580,7 @@ function buildVenueCard(venue, date, rows) {
       <span class="slot-star ${isPref?"":"dim"}">${isPref?"★":"○"}</span>
       <span class="slot-time">${row.time}–${endTime}</span>
       <span class="slot-dur ${isPref?"pref":""}">${row.minutes} min</span>
-      <span class="slot-court">${venue.address} (Indoor)</span>
+      <span class="slot-court">${row.court || venue.address}</span>
       <span class="slot-price">${priceStr}</span>
       <a class="book-btn" href="${row.bookingUrl}" target="_blank" rel="noopener">Book →</a>`;
     body.appendChild(r);
