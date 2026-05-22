@@ -68,8 +68,8 @@
   .header-title{flex:1;}
   .header-title h1{font-size:var(--title-size);font-weight:600;color:var(--text);letter-spacing:0.01em;-webkit-font-smoothing:antialiased;}
   .header-icons{display:flex;align-items:center;gap:4px;margin-left:auto;}
-  .header-icon-btn{background:transparent;border:1px solid transparent;color:rgba(99,130,200,0.4);width:34px;height:34px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
-  .header-icon-btn:hover{background:var(--surface);border-color:var(--border);color:var(--text-dim);}
+  .header-icon-btn{background:transparent;border:1px solid transparent;color:rgba(99,130,200,1);width:34px;height:34px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;text-decoration:none;}
+  .header-icon-btn:hover{background:var(--surface);border-color:var(--border);color:var(--text);}
   .header-icon-btn:active{transform:scale(0.92);}
 
   /* ── SYNC BAR with animated scanner ── */
@@ -273,7 +273,26 @@
     .person-tag{font-size:0.6rem;}
     .summary-card{padding:16px 14px;}
   }
-  /* ── SEARCH ENGINE STYLES (se- prefix) ── */
+  .padel-entry{background:linear-gradient(135deg,rgba(0,212,170,0.15),rgba(61,142,240,0.1));border:1px solid rgba(0,212,170,0.35);border-radius:6px;padding:4px 8px;margin-top:4px;display:flex;flex-direction:column;gap:2px;}
+  .padel-entry-title{font-size:var(--tag-size);font-weight:700;color:var(--accent2);-webkit-font-smoothing:antialiased;display:flex;align-items:center;gap:4px;}
+  .padel-entry-note{font-size:calc(var(--tag-size) - 1px);color:rgba(0,212,170,0.7);white-space:normal;line-height:1.3;word-break:break-word;}
+  .popup-padel-section{margin-top:12px;padding-top:12px;border-top:1px solid var(--border);margin-bottom:14px;}
+  .popup-padel-label{font-size:0.67rem;font-weight:600;color:var(--accent2);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;font-family:'JetBrains Mono',monospace;}
+  .padel-fields{display:flex;flex-direction:column;gap:8px;}
+  .padel-field-row{display:flex;align-items:center;gap:10px;}
+  .padel-field-label{font-size:0.7rem;color:rgba(61,142,240,0.7);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;min-width:80px;flex-shrink:0;-webkit-font-smoothing:antialiased;}
+  .padel-field-input{flex:1;border:none;border-bottom:1px solid var(--border);background:transparent;color:var(--text);font-family:var(--ui-font,'Inter'),sans-serif;font-size:0.82rem;padding:4px 2px;outline:none;transition:border-color 0.15s;color-scheme:dark;}
+  .padel-field-input:focus{border-bottom-color:var(--accent2);}
+  .padel-field-input::placeholder{color:var(--text-muted);}
+  .padel-dur-seg{display:flex;gap:4px;}
+  .padel-dur-btn{padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--text-dim);font-family:var(--ui-font,'Inter'),sans-serif;font-size:0.75rem;cursor:pointer;transition:all 0.15s;}
+  .padel-dur-btn.active{border-color:var(--accent2);background:rgba(0,212,170,0.1);color:var(--accent2);font-weight:600;}
+  .padel-toggle-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+  .padel-toggle-label{font-size:0.82rem;color:var(--text-dim);}
+  .padel-clear-btn{font-size:0.72rem;color:#fff;background:var(--danger);border:1px solid var(--danger);border-radius:8px;cursor:pointer;padding:4px 12px;font-family:var(--ui-font,'Inter'),sans-serif;font-weight:500;transition:opacity 0.15s;}
+  .padel-clear-btn:hover{opacity:0.82;}
+  .padel-ics-btn{display:inline-flex;align-items:center;gap:4px;margin-top:4px;background:rgba(0,212,170,0.1);border:1px solid rgba(0,212,170,0.3);border-radius:5px;color:var(--accent2);font-family:var(--ui-font,'Inter'),sans-serif;font-size:9px;font-weight:600;padding:2px 7px;cursor:pointer;transition:all 0.15s;white-space:nowrap;}
+  .padel-ics-btn:hover{background:rgba(0,212,170,0.2);border-color:var(--accent2);}
   .se-card{
     background:#0b1120;
     border-top:1px solid rgba(61,142,240,0.28);
@@ -317,16 +336,19 @@
   .se-day-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
   .se-day-line{flex:1;height:1px;background:rgba(61,142,240,0.12);}
   .se-day-count{background:var(--surface,#1a2236);border:1px solid rgba(61,142,240,0.15);border-radius:20px;font-size:11px;font-weight:600;color:var(--text-dim,#7a8aaa);padding:3px 9px;white-space:nowrap;}
-  .se-venue-card{background:var(--surface,#1a2236);border:1px solid rgba(61,142,240,0.12);border-radius:10px;margin-bottom:8px;overflow:hidden;}
-  .se-venue-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;}
-  .se-venue-left{display:flex;align-items:center;gap:8px;}
-  .se-venue-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
-  .se-slots-body{border-top:1px solid rgba(61,142,240,0.1);}
-  .se-slot-row{display:flex;align-items:center;gap:10px;padding:9px 14px;border-bottom:1px solid rgba(61,142,240,0.07);transition:background .12s;}
-  .se-slot-row:last-child{border-bottom:none;}
-  .se-slot-row:hover{background:var(--surface2,#1f2940);}
-  .se-slot-star{font-size:12px;width:14px;flex-shrink:0;color:#f5a623;}
+  .se-venue-card{background:#0b1120;border-top:1px solid rgba(61,142,240,0.28);border-bottom:1px solid rgba(61,142,240,0.28);margin-bottom:6px;overflow:hidden;position:relative;}
+  .se-venue-card::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(61,142,240,0.03),transparent 40%,transparent 60%,rgba(61,142,240,0.03));pointer-events:none;}
+  .se-venue-header{display:flex;align-items:center;justify-content:space-between;padding:7px 14px;background:rgba(61,142,240,0.07);border-bottom:1px solid rgba(61,142,240,0.15);}
+  .se-slots-body{border-top:none;}
+  .se-slot-row{display:flex;align-items:center;gap:8px;padding:6px 14px;border-bottom:1px solid rgba(61,142,240,0.06);transition:background .12s;}
+  .se-slot-time{font-size:12px;font-weight:600;min-width:90px;color:var(--text,#e2e8f8);font-family:var(--ui-font,'Inter'),sans-serif;}
+  .se-slot-dur{background:transparent;border:1px solid rgba(61,142,240,0.25);border-radius:20px;font-size:9px;font-weight:500;padding:2px 8px;color:var(--accent,#3d8ef0);white-space:nowrap;font-family:var(--ui-font,'Inter'),sans-serif;}
+  .se-slot-dur.pref{border-color:#f5a623;color:#f5a623;}
+  .se-slot-price{font-size:10px;font-weight:600;color:var(--text,#e2e8f8);white-space:nowrap;font-family:var(--ui-font,'Inter'),sans-serif;}
+  .se-slot-star{font-size:11px;width:12px;flex-shrink:0;color:#f5a623;}
   .se-slot-star.dim{color:var(--text-muted,#3d4a66);}
+  .se-book-btn{background:none;border:1px solid rgba(61,142,240,0.3);border-radius:6px;color:var(--accent,#3d8ef0);font-family:var(--ui-font,'Inter'),sans-serif;font-size:10px;font-weight:600;padding:3px 8px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:all .15s;display:inline-block;flex-shrink:0;margin-left:auto;}
+  .se-book-btn:hover{background:rgba(61,142,240,0.1);border-color:var(--accent,#3d8ef0);}
   #search-view{font-family:var(--ui-font,'Inter'),sans-serif;}
 </style>
 </head>
@@ -485,6 +507,33 @@
     <div class="popup-date-label" id="popup-date-label"></div>
     <h3 id="popup-title"></h3>
     <div class="popup-people" id="popup-people"></div>
+    <div class="popup-padel-section">
+      <div class="padel-toggle-row">
+        <span class="popup-padel-label">🏓 Padel Tennis booked</span>
+        <button class="padel-clear-btn" id="padel-clear-btn" style="display:none">Remove</button>
+      </div>
+      <div class="padel-fields">
+        <div class="padel-field-row">
+          <label class="padel-field-label">Location / Court</label>
+          <input type="text" class="padel-field-input" id="padel-location" placeholder="e.g. Cupra Arena court 3">
+        </div>
+        <div class="padel-field-row">
+          <label class="padel-field-label">Start time</label>
+          <input type="time" class="padel-field-input" id="padel-start" value="17:30" step="1800">
+        </div>
+        <div class="padel-field-row">
+          <label class="padel-field-label">Duration</label>
+          <div class="padel-dur-seg" id="padel-dur-seg">
+            <button class="padel-dur-btn" data-min="60">60 min</button>
+            <button class="padel-dur-btn active" data-min="90">90 min</button>
+          </div>
+        </div>
+        <div class="padel-field-row">
+          <label class="padel-field-label">Door code</label>
+          <input type="text" class="padel-field-input" id="padel-doorcode" placeholder="e.g. 1234">
+        </div>
+      </div>
+    </div>
     <div class="popup-actions">
       <button class="btn-clear" id="btn-clear">Clear day</button>
       <button class="btn-close" id="btn-cancel">Cancel</button>
@@ -695,7 +744,7 @@ async function checkPassword(){
     return;
   }
   // Correct — store session flag and proceed
-  sessionStorage.setItem('pw_ok','1');
+  localStorage.setItem('pw_ok', Date.now().toString());
   document.getElementById('password-screen').style.display='none';
   startApp();
 }
@@ -704,7 +753,8 @@ document.getElementById('pw-btn').addEventListener('click', checkPassword);
 document.getElementById('pw-input').addEventListener('keydown', e=>{if(e.key==='Enter')checkPassword();});
 
 // Check if already authenticated this session
-if(sessionStorage.getItem('pw_ok')==='1'){
+const _loginTs=parseInt(localStorage.getItem('pw_ok')||'0');
+if(_loginTs && (Date.now()-_loginTs) < 7*24*60*60*1000){
   document.getElementById('password-screen').style.display='none';
   startApp();
 }
@@ -758,7 +808,7 @@ async function ghWrite(data){
 function stateToJson(){
   const days={};
   for(const[k,v]of Object.entries(state.days))
-    days[k]={people:[...v.people],notes:v.notes||{}};
+    days[k]={people:[...v.people],notes:v.notes||{},padel:v.padel||null};
   return {
     settings:{
       title:settings.title, titleSize:settings.titleSize,
@@ -805,7 +855,7 @@ function jsonToState(data){
   state.days={};
   if(data.days)
     for(const[k,v]of Object.entries(data.days))
-      state.days[k]={people:new Set(v.people||[]),notes:v.notes||{}};
+      state.days[k]={people:new Set(v.people||[]),notes:v.notes||{},padel:v.padel||null};
 }
 
 // ── LOAD ───────────────────────────────────────────────────────
@@ -859,9 +909,9 @@ async function persistAll(){
   }
 }
 
-async function saveDay(key,people,notes){
-  if(people.size===0) delete state.days[key];
-  else state.days[key]={people:new Set(people),notes:notes||{}};
+async function saveDay(key,people,notes,padel=null){
+  if(people.size===0&&!padel) delete state.days[key];
+  else state.days[key]={people:new Set(people),notes:notes||{},padel};
   await persistAll();
 }
 
@@ -944,7 +994,25 @@ function renderCalendar(){
       const note=data.notes&&data.notes[pid]?data.notes[pid]:'';
       html+=`<div class="person-tag"><span class="person-tag-dot" style="background:${p.color};box-shadow:0 0 4px ${p.color}88;"></span><span class="person-tag-text"><span style="color:var(--text);flex-shrink:0;white-space:nowrap;">${p.name}</span>${note?`<span class="person-tag-note"> — ${note}</span>`:''}</span></div>`;
     });
-    html+='</div>';cell.innerHTML=html;
+    html+='</div>';
+    if(data.padel){
+      const p=data.padel;
+      const loc=typeof p==='string'?p:(p.location||'');
+      const start=typeof p==='string'?'':(p.start||'17:30');
+      const dur=typeof p==='string'?90:(p.duration||90);
+      const code=typeof p==='string'?'':(p.doorcode||'');
+      const endMins=(parseInt(start.split(':')[0])*60+parseInt(start.split(':')[1]||0))+dur;
+      const endStr=`${String(Math.floor(endMins/60)).padStart(2,'0')}:${String(endMins%60).padStart(2,'0')}`;
+      const noteKey=JSON.stringify(p).replace(/"/g,'&quot;').replace(/'/g,"\\'");
+      html+=`<div class="padel-entry">
+        <span class="padel-entry-title">🏓 Padel Tennis</span>
+        ${start?`<span class="padel-entry-note">${start}–${endStr}${loc?' · '+loc:''}</span>`:''}
+        ${code?`<span class="padel-entry-note" style="opacity:0.5">🔑 ${code}</span>`:''}
+        <button class="padel-ics-btn" onclick="event.stopPropagation();downloadPadelIcs('${key}',${noteKey})">📅 Add to Calendar</button>
+      </div>`;
+      html+=`</div>`;
+    }
+    cell.innerHTML=html;
     const hasNote=data.notes&&Object.keys(data.notes).length>0;
     if(hasNote){
       const ni=document.createElement('span');ni.className='note-indicator';ni.textContent='◆';
@@ -1058,15 +1126,20 @@ function renderSummary(){
   const mc=settings.people.map(()=>0), yc=settings.people.map(()=>0);
   const mp=`${state.year}-${String(state.month+1).padStart(2,'0')}-`;
   const yp=`${state.year}-`;
-  for(const[k,v]of Object.entries(state.days))
-    if(k.startsWith(yp)) v.people.forEach(pid=>{if(yc[pid]!==undefined){yc[pid]++;if(k.startsWith(mp))mc[pid]++;}});
+  for(const[k,v]of Object.entries(state.days)){
+    if(!k.startsWith(yp)) continue;
+    const dow=new Date(k+'T12:00:00').getDay();
+    if((settings.weekdayModes[dow]||'normal')==='hide') continue;
+    v.people.forEach(pid=>{if(yc[pid]!==undefined){yc[pid]++;if(k.startsWith(mp))mc[pid]++;}});
+  }
+  const monthName=MONTHS[state.month].substring(0,3);
   document.getElementById('year-badge').textContent=state.year;
   document.getElementById('summary-combined').innerHTML=settings.people.map((p,i)=>
     `<div class="summary-row">
       <span class="summary-dot" style="background:${p.color};box-shadow:0 0 7px ${p.color}99;"></span>
       <span class="summary-name">${p.name}</span>
       <span class="summary-divider"></span>
-      <span class="summary-stat"><span class="summary-stat-label">May:</span><span class="summary-stat-val">${mc[i]}</span></span>
+      <span class="summary-stat"><span class="summary-stat-label">${monthName}:</span><span class="summary-stat-val">${mc[i]}</span></span>
       <span class="summary-stat"><span class="summary-stat-label">Year:</span><span class="summary-stat-val">${yc[i]}</span></span>
     </div>`).join('');
   drawPie(yc);
@@ -1152,12 +1225,24 @@ function openPopup(d,key){
     wrap.appendChild(row);wrap.appendChild(noteRow);pc.appendChild(wrap);
   });
   document.getElementById('popup-overlay').classList.add('open');
+  // Padel section
+  const p=data.padel||{};
+  document.getElementById('padel-location').value=p.location||'';
+  document.getElementById('padel-start').value=p.start||'17:30';
+  document.getElementById('padel-doorcode').value=p.doorcode||'';
+  // Duration buttons
+  const activeDur=String(p.duration||90);
+  document.querySelectorAll('.padel-dur-btn').forEach(b=>{
+    b.classList.toggle('active',b.dataset.min===activeDur);
+  });
+  const hasPadel=!!(p.location||p.doorcode||p.start);
+  document.getElementById('padel-clear-btn').style.display=hasPadel?'':'none';
 }
 function closePopup(){document.getElementById('popup-overlay').classList.remove('open');currentKey=null;}
 document.getElementById('btn-cancel').addEventListener('click',closePopup);
 document.getElementById('popup-overlay').addEventListener('click',e=>{if(e.target.id==='popup-overlay')closePopup();});
 document.getElementById('btn-clear').addEventListener('click',async()=>{
-  if(currentKey){await saveDay(currentKey,new Set(),{});renderCalendar();renderSummary();closePopup();}
+  if(currentKey){await saveDay(currentKey,new Set(),{},null);renderCalendar();renderSummary();closePopup();}
 });
 document.getElementById('btn-save').addEventListener('click',async()=>{
   const notes={};
@@ -1165,7 +1250,35 @@ document.getElementById('btn-save').addEventListener('click',async()=>{
     const pid=parseInt(inp.dataset.pid);
     if(popupSelected.has(pid)&&inp.value.trim()) notes[pid]=inp.value.trim();
   });
-  await saveDay(currentKey,popupSelected,notes);renderCalendar();renderSummary();closePopup();
+  const activeDurBtn=document.querySelector('.padel-dur-btn.active');
+  const padelData={
+    location:document.getElementById('padel-location').value.trim(),
+    start:document.getElementById('padel-start').value||'17:30',
+    duration:parseInt(activeDurBtn?.dataset.min||'90'),
+    doorcode:document.getElementById('padel-doorcode').value.trim(),
+  };
+  const hasPadel=padelData.location||padelData.doorcode||padelData.start;
+  await saveDay(currentKey,popupSelected,notes,hasPadel?padelData:null);renderCalendar();renderSummary();closePopup();
+});
+
+document.getElementById('padel-clear-btn').addEventListener('click',()=>{
+  document.getElementById('padel-location').value='';
+  document.getElementById('padel-start').value='17:30';
+  document.getElementById('padel-doorcode').value='';
+  document.querySelectorAll('.padel-dur-btn').forEach((b,i)=>b.classList.toggle('active',i===1));
+  document.getElementById('padel-clear-btn').style.display='none';
+});
+document.querySelectorAll('.padel-dur-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.padel-dur-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+['padel-location','padel-doorcode'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',()=>{
+    const hasData=document.getElementById('padel-location').value||document.getElementById('padel-doorcode').value;
+    document.getElementById('padel-clear-btn').style.display=hasData?'':'none';
+  });
 });
 
 // ── NAV ────────────────────────────────────────────────────────
@@ -1469,7 +1582,58 @@ document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){closePopup();closeSettings();closeRange();closeRecurring();}
 });
 
-// ── VIEW SWITCHER ──────────────────────────────────────────────
+// ── PADEL ICS EXPORT ───────────────────────────────────────────
+function downloadPadelIcs(dateKey, p){
+  // Support both old string format and new structured object
+  if(typeof p==='string'){p={location:p,start:'17:30',duration:90,doorcode:''};}
+
+  const [startH,startM]=(p.start||'17:30').split(':').map(Number);
+  const dur=parseInt(p.duration||90);
+  const endTotalMins=startH*60+startM+dur;
+  const endH=Math.floor(endTotalMins/60);
+  const endM=endTotalMins%60;
+
+  const [y,m,d]=dateKey.split('-');
+  const pad=n=>String(n).padStart(2,'0');
+  const dtStart=`${y}${m}${d}T${pad(startH)}${pad(startM)}00`;
+  const dtEnd=`${y}${m}${d}T${pad(endH)}${pad(endM)}00`;
+  const dtStamp=new Date().toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';
+
+  const descParts=[];
+  if(p.location) descParts.push(p.location);
+  if(p.doorcode) descParts.push(`Door code: ${p.doorcode}`);
+  const desc=descParts.join(' — ').replace(/,/g,'\\,').replace(/\n/g,'\\n')||'Padel Tennis';
+  const location=(p.location||'').replace(/,/g,'\\,');
+
+  const ics=[
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//LePadel//Tracker//EN',
+    'BEGIN:VEVENT',
+    `UID:padel-${dateKey}-${Date.now()}@lepadel`,
+    `DTSTAMP:${dtStamp}`,
+    `DTSTART:${dtStart}`,
+    `DTEND:${dtEnd}`,
+    'SUMMARY:🏓 Padel Tennis',
+    `LOCATION:${location}`,
+    `DESCRIPTION:${desc}`,
+    'END:VEVENT',
+    'END:VCALENDAR'
+  ].join('\r\n');
+
+  // iOS Safari doesn't support blob downloads — use data URI which triggers Calendar prompt
+  const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
+  if(isIOS){
+    window.open('data:text/calendar;charset=utf8,'+encodeURIComponent(ics),'_blank');
+  } else {
+    const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download=`padel-${dateKey}.ics`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+}
 function switchView(view){
   const tracker = document.getElementById('app-shell');
   const search  = document.getElementById('search-view');
